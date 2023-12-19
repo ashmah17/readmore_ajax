@@ -1,0 +1,228 @@
+<?php
+
+include "./config/server.php";
+
+$errors = array();
+$fname = "";
+$uname = "";
+$email = "";
+$number = "";
+$pass = "";
+$cpass = "";
+
+if(isset($_POST['btn-reg'])){
+  $errors = array();
+  $fname = $_POST['fname'];
+  $uname = $_POST['uname'];
+  $email = $_POST['email'];
+  $number = $_POST['number'];
+  $pass = $_POST['password'];
+  $cpass = $_POST['cpassword'];
+
+  if(empty($fname)){
+    $errors['fname'] = "First Name is require";
+  }
+  if(empty($uname)){
+    $errors['uname'] = "User Name is require";
+  }
+  if(empty($email)){
+    $errors['email'] = "Email is require";
+  }
+  // if(empty($number)){
+  //   $errors['number'] = "Number is require";
+  // }
+  if(empty($pass)){
+    $errors['password'] = "password is require";
+  }
+  if(empty($cpass)){
+    $errors['cpassword'] = "Confirm password is require";
+  }
+
+
+  if($pass != $cpass){
+    $errors['mismatch'] = "The two password mismatch";
+  }
+
+  if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    $errors['Validation'] = "Invalid Email Address";
+  }
+
+  $sql = "SELECT * FROM register WHERE `email` = ? OR `uname` = ? OR `number` = ?";
+
+  $stmt = $con->prepare($sql);
+  $stmt->bind_param('sss', $email, $uname, $number);
+  $stmt->execute();
+
+  $result = $stmt->get_result();
+  $rowCount = $result->num_rows;
+
+  if($rowCount>0){
+    $errors['exist'] = "this user already existed";
+  }
+}
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lineawesome/css/line-awesome.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:sans-serif ;
+            outline: 0;
+            border: 0;
+        }
+        body{
+            /* background: linear-gradient(45deg, rgb(24, 112, 141), rgb(192, 189, 189)); */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+           border: 2px solid rgb(156, 154, 154);
+            width: 90vh;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(50px);
+            box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+        }
+
+        form{
+          width: 90vh;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+       @media (max-width:960px) {
+        .container{
+            width: 70vh;
+            height: 80vh;
+        }
+        
+
+       }
+
+       @media (max-width:300px) {
+        .container{
+            width: 70vh;
+            height: 80vh;
+            margin: 10px;
+        }
+    }
+        input{
+            margin: 5px;
+            padding: .5rem;
+            width: 20rem;
+            border-radius: 10px;
+            border: 1px solid rgb(206, 205, 205);
+            
+                }
+                button::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(45deg,#406d97,rgba(154, 203, 226, 0.5),#6eabe5);
+    transform: rotateZ(60deg) translate(-5em, 7.5em);
+} 
+
+button{
+    padding: .3em;
+    width: 7em; 
+    border-radius: 10px;
+    background: #6eabe5;
+    color: #ffffff;
+    font-size: 17px;
+    font-family: Tahoma;
+    font-weight: 800;
+     position: relative;
+    overflow: hidden;
+    line-height: 32px; 
+}
+ button:hover::after, button:focus::after{
+    animation: sheen 1.5s forwards;  
+   
+} 
+
+@keyframes sheen{
+   100%{
+    transform: rotateZ(60deg) translate(1em, -9em);
+   }
+}
+                
+                a{
+                    text-decoration: none;
+                    color: #000000;
+                    font-size:15px;
+                }
+                h2{
+                    color: #000000;
+                    font-size: 30px;
+                    margin-bottom: 30px;
+                    font-weight: 750;
+
+                }
+
+                i{
+                  font-size:15px;
+                }
+                i a{
+                  color:blue;
+                }
+
+                label{
+                   
+                    color: #000000;
+                }
+               
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+       <form action="index.html">
+
+       <?php if(count($errors) > 0){ ?>
+          <div class="alert alert-danger">
+            <?php foreach($errors as $err){ ?>
+            <li>
+              <?php echo $err; ?>
+            </li>
+              <?php };?>
+          </div>
+            <?php }; ?>
+
+       <h2>Welcome back</h2>
+        <input type="text" placeholder="First Name" name ="fname">
+        <input type="text" placeholder="Surname Name" name ="uname">
+        <input type="text" placeholder="Email" name ="email">
+        <input type="text" placeholder="Password" name ="passord">
+        <input type="text" placeholder="Confirm Password" name ="cpassword">
+        <i>Already registered  <a href="login.html">login</a></i>
+        <button name ="btn">Register</button>
+
+       </form>
+    </div>
+</body>
+</html>

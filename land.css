@@ -1,0 +1,790 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    outline: 0;
+    border: 0;
+}
+body{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header{
+    background: #fff;
+    position: fixed;
+    width:100%;
+    /* z-index: 100; */
+    padding: 1rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0, 0.2);
+}
+
+.btnn::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(45deg, #221204, #49290c 50%, #221204);
+    transform: rotateZ(60deg) translate(-5em, 7.5em);
+} 
+
+.btnn{
+    margin-top: 9rem;
+    padding: .3em;
+    width: 7em; 
+    border-radius: 15px;
+    background: #221204;
+    color: #ffffff;
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: 700;
+     position: relative;
+    overflow: hidden;
+    line-height: 32px; 
+}
+ button:hover::after, button:focus::after{
+    animation: sheen 1.5s forwards;  
+} 
+
+@keyframes sheen{
+   100%{
+    transform: rotateZ(60deg) translate(1em, -9em);
+   }
+}
+
+.sign{
+    margin-top: 50px;
+    width: 100%;
+    /* background-color:#7c5555 ; */
+    display: flex;
+    justify-content: space-around;
+}
+.sign img{
+    width: 10%;
+    margin-left: 250px;
+}
+.sign h4{
+    margin: 30px;
+}
+h4{
+    color: #2e1414;
+    font-weight: 800;
+    width: 5rem;
+}
+.slogan{
+    /* background-color: aliceblue; */
+    margin-top: 4rem;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.cont{
+    margin-top: 40px;
+    position: absolute;
+    z-index: -1;
+    width: 30%;
+    height: 50%;
+    margin-left: 200px;
+    background-color: rgba(225,0,0, 0.1);
+    border-radius: 50%;
+    animation-name: animate1;
+    animation-duration: 4s;
+    animation-direction: rverse;
+    animation-iteration-count: infinite;
+    transition: 3s ease;
+}
+@keyframes animate1{
+    0%{
+        left: 0px;
+        top: 0px;
+    }
+    25%{
+        left: 0px;
+        top: 200px;
+    }
+    50%{
+        left: 200px;
+        top: 0px;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+    }
+}
+.cont1{
+    margin-top: 40px;
+    position: absolute;
+    z-index: -1;
+    width: 30%;
+    height: 50%;
+    margin-left: 200px;
+    background-color: rgba(225,0,0, 0.1);
+    border-radius: 50%;
+    animation-name: animate;
+    animation-duration: 4s;
+    animation-direction: rverse;
+    animation-iteration-count: infinite;
+    transition: 3s ease;
+}
+@keyframes animate{
+    0%{
+        left: 0px;
+        top: 0px;
+    }
+    25%{
+        left: 200px;
+        top: 0px;
+    }
+    50%{
+        left: 0px;
+        top: 200px;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+    }
+}
+.cont2{
+    margin-top: 40px;
+    position: absolute;
+    z-index: -1;
+    width: 30%;
+    height: 50%;
+    margin-left: 200px;
+    background-color: rgba(225,0,0, 0.1);
+    border-radius: 50%;
+    animation-name: animate2;
+    animation-duration: 4s;
+    animation-direction: rverse;
+    animation-iteration-count: infinite;
+    transition: 3s ease;
+}
+@keyframes animate2{
+    0%{
+        left: 200px;
+        top: 0px;
+    }
+    25%{
+        left: 0px;
+        top: 0px;
+    }
+    50%{
+        left: 0px;
+        top: 0px;
+    }
+    100%{
+        left: 0px;
+        top: 200px;
+    }
+}
+
+.cont3{
+    margin-top: 40px;
+    position: absolute;
+    z-index: -1;
+    width: 30%;
+    height: 50%;
+    margin-left: 200px;
+    background-color: rgba(225,0,0, 0.1);
+    border-radius: 50%;
+    animation-name: animate3;
+    animation-duration: 4s;
+    animation-direction: rverse;
+    animation-iteration-count: infinite;
+    transition: 3s ease;
+}
+@keyframes animate3{
+    0%{
+        left: 0px;
+        top: 200px;
+    }
+    25%{
+        left: 0px;
+        top: 0px;
+    }
+    50%{
+        left: 0px;
+        top: 200px;
+    }
+    100%{
+        left: 200px;
+        top: 0px;
+    }
+
+}
+
+/* ******AT MEDIA***** */
+
+@media only screen and (max-width: 1500px) {
+    
+    footer{
+        margin-top: 10rem;
+        background-color:#46270c;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: center; 
+        height: 60vh;
+        width: 100%;
+     }
+    .foo{
+        color: white;
+      margin: 30px; 
+      width: 50%;
+      font-weight: 700;
+      font-family: sans-serif;
+      margin: 50px; 
+
+     }
+     .foo h4{
+        font-family: sans-serif;
+        color: white
+        ;
+     }
+            
+     .ter{
+      margin: 50px; 
+      width: 50%;
+      font-family: sans-serif;
+      color: #ffffff;
+      font-weight: 700;
+     }
+    .contact{
+        width: 100%;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+    }
+       .contact i{
+        font-size: 30px;
+        color:white;
+        margin: 50px;
+       }
+        span{
+            font-size: 20px;
+        }    
+       
+    
+    
+    .sign img{
+        width: 20%;
+        margin-left: 220px;
+    }
+    .sign h4{
+        margin: 30px;
+    }
+    h4{
+        color: #2e1414;
+        font-weight: 700;
+        width: 5rem;
+        font-family: sans-serif;
+    }
+.cont{
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 50%;
+    margin-left: 90px;
+    background-color: rgba(225,0,0, 0.1);
+    border-radius: 50%;
+    animation-name: animate1;
+    animation-duration: 4s;
+    animation-direction: rverse;
+    animation-iteration-count: infinite;
+    transition: 3s ease;
+}
+@keyframes animate1{
+    0%{
+        left: 0px;
+        top: 0px;
+    }
+    25%{
+        left: 0px;
+        top: 200px;
+    }
+    50%{
+        left: 200px;
+        top: 0px;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+    }
+}
+.cont1{
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 50%;
+    margin-left: 90px;
+    background-color: rgba(225,0,0, 0.1);
+    border-radius: 50%;
+    animation-name: animate;
+    animation-duration: 4s;
+    animation-direction: rverse;
+    animation-iteration-count: infinite;
+    transition: 3s ease;
+}
+@keyframes animate{
+    0%{
+        left: 0px;
+        top: 0px;
+    }
+    25%{
+        left: 200px;
+        top: 0px;
+    }
+    50%{
+        left: 0px;
+        top: 200px;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+    }
+}
+.cont2{
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 50%;
+    margin-left: 90px;
+    background-color: rgba(225,0,0, 0.1);
+    border-radius: 50%;
+    animation-name: animate2;
+    animation-duration: 4s;
+    animation-direction: rverse;
+    animation-iteration-count: infinite;
+    transition: 3s ease;
+}
+@keyframes animate2{
+    0%{
+        left: 200px;
+        top: 0px;
+    }
+    25%{
+        left: 0px;
+        top: 0px;
+    }
+    50%{
+        left: 0px;
+        top: 0px;
+    }
+    100%{
+        left: 0px;
+        top: 200px;
+    }
+}
+
+.cont3{
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 50%;
+    margin-left: 90px;
+    background-color: rgba(225,0,0, 0.1);
+    border-radius: 50%;
+    animation-name: animate3;
+    animation-duration: 4s;
+    animation-direction: rverse;
+    animation-iteration-count: infinite;
+    transition: 3s ease;
+}
+@keyframes animate3{
+    0%{
+        left: 0px;
+        top: 200px;
+    }
+    25%{
+        left: 0px;
+        top: 0px;
+    }
+    50%{
+        left: 0px;
+        top: 200px;
+    }
+    100%{
+        left: 200px;
+        top: 0px;
+    }
+
+}
+}
+
+@media only screen and (max-width: 960px) {
+   
+    footer{
+        margin-top: 10rem;
+        background-color:#46270c;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+     }
+    .foo{
+        color: white;
+      margin-left: 30px; 
+      width: 100%;
+      font-weight: 700;
+      font-family: sans-serif;
+      margin: 50px; 
+
+     }
+     .foo h4{
+        font-family: sans-serif;
+        color: white
+        ;
+     }
+            
+     .ter{
+      margin: 50px; 
+      width: 50%;
+      font-family: sans-serif;
+      color: #ffffff;
+      font-weight: 700;
+     }
+    .contact{
+        width: 100%;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+    }
+       .contact i{
+        font-size: 30px;
+        color:white;
+        margin: 50px;
+       }
+        span{
+            font-size: 20px;
+        }    
+       
+    .cont{
+        position: absolute;
+        z-index: -1;
+        width: 50%;
+        height: 50%;
+        margin-left: 90px;
+        background-color: rgba(225,0,0, 0.1);
+        border-radius: 50%;
+        animation-name: animate1;
+        animation-duration: 4s;
+        animation-direction: rverse;
+        animation-iteration-count: infinite;
+        transition: 3s ease;
+    }
+    @keyframes animate1{
+        0%{
+            left: 0px;
+            top: 0px;
+        }
+        25%{
+            left: 0px;
+            top: 200px;
+        }
+        50%{
+            left: 200px;
+            top: 0px;
+        }
+        100%{
+            left: 0px;
+            top: 0px;
+        }
+    }
+    .cont1{
+        position: absolute;
+        z-index: -1;
+        width: 50%;
+        height: 50%;
+        margin-left: 90px;
+        background-color: rgba(225,0,0, 0.1);
+        border-radius: 50%;
+        animation-name: animate;
+        animation-duration: 4s;
+        animation-direction: rverse;
+        animation-iteration-count: infinite;
+        transition: 3s ease;
+    }
+    @keyframes animate{
+        0%{
+            left: 0px;
+            top: 0px;
+        }
+        25%{
+            left: 200px;
+            top: 0px;
+        }
+        50%{
+            left: 0px;
+            top: 200px;
+        }
+        100%{
+            left: 0px;
+            top: 0px;
+        }
+    }
+    .cont2{
+        position: absolute;
+        z-index: -1;
+        width: 50%;
+        height: 50%;
+        margin-left: 90px;
+        background-color: rgba(225,0,0, 0.1);
+        border-radius: 50%;
+        animation-name: animate2;
+        animation-duration: 4s;
+        animation-direction: rverse;
+        animation-iteration-count: infinite;
+        transition: 3s ease;
+    }
+    @keyframes animate2{
+        0%{
+            left: 200px;
+            top: 0px;
+        }
+        25%{
+            left: 0px;
+            top: 0px;
+        }
+        50%{
+            left: 0px;
+            top: 0px;
+        }
+        100%{
+            left: 0px;
+            top: 200px;
+        }
+    }
+    
+    .cont3{
+        position: absolute;
+        z-index: -1;
+        width: 50%;
+        height: 50%;
+        margin-left: 90px;
+        background-color: rgba(225,0,0, 0.1);
+        border-radius: 50%;
+        animation-name: animate3;
+        animation-duration: 4s;
+        animation-direction: rverse;
+        animation-iteration-count: infinite;
+        transition: 3s ease;
+    }
+    @keyframes animate3{
+        0%{
+            left: 0px;
+            top: 200px;
+        }
+        25%{
+            left: 0px;
+            top: 0px;
+        }
+        50%{
+            left: 0px;
+            top: 200px;
+        }
+        100%{
+            left: 200px;
+            top: 0px;
+        }
+    
+    }
+}
+    
+ @media only screen and (max-width: 580px) {
+   
+        .cont{
+            position: absolute;
+            z-index: -1;
+            width: 50%;
+            height: 50%;
+            margin-left: 90px;
+            background-color: rgba(225,0,0, 0.1);
+            border-radius: 50%;
+            animation-name: animate1;
+            animation-duration: 4s;
+            animation-direction: rverse;
+            animation-iteration-count: infinite;
+            transition: 3s ease;
+        }
+        @keyframes animate1{
+            0%{
+                left: 0px;
+                top: 0px;
+            }
+            25%{
+                left: 0px;
+                top: 200px;
+            }
+            50%{
+                left: 200px;
+                top: 0px;
+            }
+            100%{
+                left: 0px;
+                top: 0px;
+            }
+        }
+        .cont1{
+            position: absolute;
+            z-index: -1;
+            width: 50%;
+            height: 50%;
+            margin-left: 90px;
+            background-color: rgba(225,0,0, 0.1);
+            border-radius: 50%;
+            animation-name: animate;
+            animation-duration: 4s;
+            animation-direction: rverse;
+            animation-iteration-count: infinite;
+            transition: 3s ease;
+        }
+        @keyframes animate{
+            0%{
+                left: 0px;
+                top: 0px;
+            }
+            25%{
+                left: 200px;
+                top: 0px;
+            }
+            50%{
+                left: 0px;
+                top: 200px;
+            }
+            100%{
+                left: 0px;
+                top: 0px;
+            }
+        }
+        .cont2{
+            position: absolute;
+            z-index: -1;
+            width: 50%;
+            height: 50%;
+            margin-left: 90px;
+            background-color: rgba(225,0,0, 0.1);
+            border-radius: 50%;
+            animation-name: animate2;
+            animation-duration: 4s;
+            animation-direction: rverse;
+            animation-iteration-count: infinite;
+            transition: 3s ease;
+        }
+        @keyframes animate2{
+            0%{
+                left: 200px;
+                top: 0px;
+            }
+            25%{
+                left: 0px;
+                top: 0px;
+            }
+            50%{
+                left: 0px;
+                top: 0px;
+            }
+            100%{
+                left: 0px;
+                top: 200px;
+            }
+        }
+        
+        .cont3{
+            position: absolute;
+            z-index: -1;
+            width: 50%;
+            height: 50%;
+            margin-left: 90px;
+            background-color: rgba(225,0,0, 0.1);
+            border-radius: 50%;
+            animation-name: animate3;
+            animation-duration: 4s;
+            animation-direction: rverse;
+            animation-iteration-count: infinite;
+            transition: 3s ease;
+        }
+        @keyframes animate3{
+            0%{
+                left: 0px;
+                top: 200px;
+            }
+            25%{
+                left: 0px;
+                top: 0px;
+            }
+            50%{
+                left: 0px;
+                top: 200px;
+            }
+            100%{
+                left: 200px;
+                top: 0px;
+            }
+        
+        }
+ }
+ .mid{
+    width: 100%;
+    height: 40vh;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+
+ input{
+    width: 60%;
+    padding: .5rem;
+    margin: .3rem;
+    border-radius: .5rem;
+    background-color: #faf8f8;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+ }
+ label{
+    font-family: sans-serif;
+    font-weight: 700;
+    margin-top: 15px;
+    color: #221204;
+ }
+ .but::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(45deg, #221204, #49290c 50%, #221204);
+    transform: rotateZ(60deg) translate(-5em, 7.5em);
+} 
+
+.but{
+    margin-top: 1rem;
+    width: 7em; 
+    padding: 1rem;
+    border-radius: 15px;
+    background: #221204;
+    color: #ffffff;
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: 700;
+     position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+ .but:hover::after, .but:focus::after{
+    animation: sheen 1.5s forwards;  
+} 
+
+ 
